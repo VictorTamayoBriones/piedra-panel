@@ -1,0 +1,73 @@
+.table-container {
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+    overflow: overlay;
+    table {
+        width: 100%;
+        th.mat-header-cell {
+            text-align: center;
+        }
+        tr.mat-row,
+        tr.mat-footer-row {
+            height: 55px;
+        }
+        th.mat-header-cell {
+            padding: 0 15px;
+        }
+        td.mat-cell,
+        td.mat-footer-cell {
+            border: none;
+        }
+        td.mat-cell {
+            text-align: center;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        table {
+            th.mat-header-cell,
+            td.mat-cell {
+                padding: 0 15px;
+            }
+        }
+    }
+    @media screen and (max-width: 991px) {
+        table {
+            th.mat-header-cell{
+                font-size: 1em;
+            }
+            td.mat-cell {
+                font-size: .9em;
+                button{
+                    padding: 2px 5px;
+                }
+                &.actions{
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+.mr-1{
+    margin-right: .25em;
+  }
+
+.table-container::-webkit-scrollbar {
+    width: 3px;
+    height: 8px;
+    z-index: -1;
+    /* width of the entire scrollbar */
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f9f9f9;
+    /* color of the tracking area */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    /* color of the scroll thumb */
+    border-radius: 40px;
+    /* roundness of the scroll thumb */
+    border: none;
+    /* creates padding around scroll thumb */
+}

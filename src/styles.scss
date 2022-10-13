@@ -1,1 +1,96 @@
-/* You can add global styles to this file, and also import other style files */
+//@import './app/mat-table-responsive/mat-table-responsive.directive';
+/** Colores **/
+:root {
+  --main-color: #F7E9C3;
+  --second-color:#782F39;
+  --accent-color:#3F1604;
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #b5b5b5;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #FCFCFC;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+li,
+b,
+strong,
+span,
+button,
+input {
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+a,
+button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+section {
+  margin-left: 100px;
+  padding: 3rem 15px;
+}
+
+.mat-tab-header {
+  margin: 1em 0;
+}
+
+.modifier-dialog{
+  overflow: auto;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container-mid {
+  width: 49%;
+}
+
+.form-container-small {
+  width: 24%;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

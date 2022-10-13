@@ -1,0 +1,34 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+    <div class="logo-container">
+        <div class="logo" (click)="toggleCollapse()"><img src="assets/images/logo.png" alt=""></div>
+        <div class="logo-text" *ngIf="collapsed">La plazuela</div>
+        <div class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </div>
+    </div>
+    <ul class="sidenav-nav">
+        <ng-container>
+            <div class="top">
+                <li class="sidenav-nav-item" *ngFor="let item of navData">
+                    <a class="sidenav-nav-link" [routerLink]="item.routeLink" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}" (click)="item.icon">
+                        <i class="sidenav-link-icon" [class]="item.icon"></i>
+                        <span class="sidenav-link-text" *ngIf="collapsed">{{item.label}}</span>
+                    </a>
+                </li>
+            </div>
+
+            <div>
+                <div class="bottom">
+                    <li class="sidenav-nav-item">
+                        <a class="sidenav-nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}" (click)="logout()">
+                            <i class="sidenav-link-icon fa-solid fa-sign-out-alt"></i>
+                            <span class="sidenav-link-text" *ngIf="collapsed">Cerrar Sesión</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </ng-container>
+    </ul>
+</div>

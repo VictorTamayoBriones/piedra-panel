@@ -1,0 +1,39 @@
+<section id="clientes">
+
+    <div class="header-container">
+      <h1 class="titles">Listado de restaurantes</h1>
+      <div class="button-wrap">
+      </div>
+    </div>
+  
+    <mat-card class="card-container component-content">
+      <mat-card class="list-container">
+        <div class="filter-container">
+          <header>
+            <p class="title">Lista de restaurantes</p>
+            <button [routerLink]="['/restaurant-form/create']" class="newRest"><mat-icon>add</mat-icon> <span class="mobil">Nuevo restaurante</span></button>
+          </header>
+          <div class="input-icons">
+            <img src="../assets/icons/search.png" alt="" />
+            <input type="text" [(ngModel)]="term" placeholder="Buscar por nombre">
+          </div>
+        </div>
+        <div class="items-container">
+          <mat-selection-list #series [multiple]="false">
+            <mat-list-option *ngFor="let item of restaurants" [value]="item">
+              <div class="item-container">
+                <div class="name-container">
+                  <span>{{item.name}}</span>
+                </div>
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </div>
+              <span *ngIf="item.length == 0">No se encontraron restaurantes</span>
+            </mat-list-option>
+          </mat-selection-list>
+        </div>
+      </mat-card>
+      <mat-card class="_table-container">
+        <app-dishes-table [item]="series.selectedOptions.selected[0]?.value"></app-dishes-table>
+      </mat-card>
+    </mat-card>
+  </section>
