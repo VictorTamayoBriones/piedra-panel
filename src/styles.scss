@@ -1,4 +1,10 @@
 //@import './app/mat-table-responsive/mat-table-responsive.directive';
+
+@import "./assets/presets/containers.scss";
+@import "./assets/presets/presets.scss";
+@import "/src/assets/presets/table-container.scss";
+@import "./assets/presets/table.scss";
+@import "./assets/presets/fonts.scss";
 /** Colores **/
 :root {
   --main-color: #F7E9C3;

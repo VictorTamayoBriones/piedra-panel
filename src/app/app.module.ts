@@ -20,6 +20,10 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MaterialModule } from './material/material.module';
 import { BodyComponent } from './components/body/body.component';
 import { DishesTableComponent } from './components/dishes-table/dishes-table.component';
+import { UsersTableComponent } from './pages/users-table/users-table.component';
+import { UsersCreateComponent } from './components/users-create/users-create.component';
+import { AddTagModalComponent } from './components/add-tag-modal/add-tag-modal.component';
+import { DishesFormComponent } from './components/dishes-form/dishes-form.component';
 
 
 @NgModule({
@@ -31,7 +35,11 @@ import { DishesTableComponent } from './components/dishes-table/dishes-table.com
     RestaurantesFormComponent,
     RestaurantesTableComponent,
     BodyComponent,
-    DishesTableComponent
+    DishesTableComponent,
+    UsersTableComponent,
+    UsersCreateComponent,
+    AddTagModalComponent,
+    DishesFormComponent,
   ],
   imports: [
     BrowserModule,
