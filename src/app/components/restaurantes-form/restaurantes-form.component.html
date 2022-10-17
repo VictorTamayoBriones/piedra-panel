@@ -1,1 +1,143 @@
-<p>restaurantes-form works!</p>
+<section>
+    <div class="header-container">
+        <div class="title-wrap">
+            <a href="" [routerLink]="['/restaurants']">
+                <mat-icon>keyboard_backspace</mat-icon>
+            </a>
+            <h1 class="titles">{{isEdit ? 'Editar Restaurante' : 'Nuevo Restaurante'}}</h1>
+        </div>
+        <div class="button-wrap">
+            <button class="btn-tag" (click)="openAddTagModal()" mat-raised-button
+                style="background-color: #4caf50; color: white;">
+                <mat-icon matPreffix style="color: white">add</mat-icon> <span class="btn-text">Agregar nuevo tag</span>
+            </button>
+            <button mat-button (click)="validateForm()">
+                <mat-icon>save</mat-icon>
+                <span class="btn-text">Guardar</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- <div class="btnTag-wrapper">
+        <button class="btn-tag" (click)="openAddTagModal()" mat-raised-button
+            style="background-color: #4caf50; color: white;">
+            <mat-icon matPreffix>add</mat-icon> Agregar nuevo tag
+        </button>
+    </div> -->
+
+    <div class="form-section">
+        <form action="" [formGroup]="restaurantForm">
+
+            <div class="inputs">
+
+                <div class="input-container">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Nombre del restaurante</mat-label>
+                        <input type="text" matInput formControlName="name">
+                    </mat-form-field>
+                    <div class="mat-error">
+                        <p
+                            *ngIf="(restaurantForm.get('name')?.errors && restaurantForm.get('name')?.touched) || (invalid && restaurantForm.get('name')?.untouched)">
+                            Ingrese un nombre
+                        </p>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Descripción</mat-label>
+                        <input type="text" matInput formControlName="description">
+                    </mat-form-field>
+                    <div class="mat-error">
+                        <p
+                            *ngIf="(restaurantForm.get('description')?.errors && restaurantForm.get('description')?.touched) || (invalid && restaurantForm.get('description')?.untouched)">
+                            Ingrese una Descripción
+                        </p>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Dirección</mat-label>
+                        <input type="text" matInput formControlName="address">
+                    </mat-form-field>
+                    <div class="mat-error">
+                        <p
+                            *ngIf="(restaurantForm.get('address')?.errors && restaurantForm.get('address')?.touched) || (invalid && restaurantForm.get('address')?.untouched)">
+                            Ingrese una Dirección
+                        </p>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Latitud</mat-label>
+                        <input type="number" matInput formControlName="lat">
+                    </mat-form-field>
+                    <div class="mat-error">
+                        <div class="title-input">
+                            <p
+                                *ngIf="(restaurantForm.get('lat')?.errors && restaurantForm.get('lat')?.touched) || (invalid && restaurantForm.get('lat')?.untouched)">
+                                Ingrese una Latitud
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Longitud</mat-label>
+                        <input type="number" matInput formControlName="long">
+                    </mat-form-field>
+                    <div class="mat-error">
+                        <div class="title-input">
+                            <p
+                                *ngIf="(restaurantForm.get('long')?.errors && restaurantForm.get('long')?.touched) || (invalid && restaurantForm.get('long')?.untouched)">
+                                Ingrese una Longitud
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Tags</mat-label>
+                        <mat-select matInput formControlName="tags" multiple [compareWith]="objectComparisonFunction">
+                            <div class="tagSelect" *ngFor="let tag of tags">
+                                <mat-option [value]="tag">{{tag.tag}}</mat-option>
+                            </div>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="mat-error">
+                        <div class="title-input">
+                            <p
+                                *ngIf="(restaurantForm.get('tags')?.errors && restaurantForm.get('tags')?.touched) || (invalid && restaurantForm.get('tags')?.untouched)">
+                                Al menos un tag es requerido
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="dropzone-wrapper">
+
+                <div class="current-image" *ngIf="isEdit">
+                    <p>Imagen actual</p>
+                    <img [src]="currentImage" alt="" width="200">
+                    <!-- <img *ngFor="let image of currentImages" [src]="image.path" alt=""> -->
+                </div>
+
+                <ngx-dropzone (change)="onSelect($event)" [accept]="'image/*'" [multiple]=false>
+                    <ngx-dropzone-label>Seleccione o arrastre aquí un archivo</ngx-dropzone-label>
+                    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of file" [file]="f"
+                        [removable]="true" (removed)="onRemove(f)" style="margin: 0 auto;">
+                        <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+                    </ngx-dropzone-image-preview>
+                </ngx-dropzone>
+            </div>
+
+        </form>
+    </div>
+</section>

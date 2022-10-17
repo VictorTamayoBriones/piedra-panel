@@ -19,6 +19,17 @@
             </div>
 
             <div>
+
+                <div class="bottom">
+                    <li class="sidenav-nav-item">
+                        <a class="sidenav-nav-link" [routerLink]="['/users']" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}" >
+                            <i class="sidenav-link-icon fa-solid fa-users"></i>
+                            <span class="sidenav-link-text" *ngIf="collapsed">Administradores</span>
+                        </a>
+                    </li>
+                </div>
+
                 <div class="bottom">
                     <li class="sidenav-nav-item">
                         <a class="sidenav-nav-link" routerLinkActive="active"

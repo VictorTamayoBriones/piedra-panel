@@ -1,0 +1,68 @@
+<section>
+    <div class="component-main container">
+        <div class="header-container">
+            <div class="title-container">
+                <button class="btn-add" mat-button [routerLink]="['/users']">
+                    <mat-icon style="padding-right: 3px">arrow_back</mat-icon>
+                </button>
+                <h1 class="titles">Agregar Administrador</h1>
+            </div>
+            <div class="button-wrap">
+                <button mat-button class="btn-add" (click)="formValidation()" [disabled]="loader">
+                    <mat-icon style="padding-right: 3px">save</mat-icon>
+                    Guardar
+                </button>
+            </div>
+        </div>
+
+        <form class="form" [formGroup]="adminsForm">
+            <div class="row">
+                <div class="input-container">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput formControlName="name" required (click)="resetValidations()">
+                    </mat-form-field>
+                    <div class="error">
+                        <p *ngIf="(adminsForm.get('name')?.errors && adminsForm.get('name')?.touched) || (invalid && adminsForm.get('name')?.untouched)"
+                            [@enterAnimation]>
+                            Campo requerido
+                        </p>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Correo</mat-label>
+                        <input type="text" min="0" matInput formControlName="email" required
+                            (click)="resetValidations()">
+                    </mat-form-field>
+                    <div class="error">
+                        <p *ngIf="(adminsForm.get('email')?.errors && adminsForm.get('email')?.touched) || (invalid && adminsForm.get('email')?.untouched)"
+                            [@enterAnimation]>
+                            Ingrese un correo válido
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="input-container">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input type="password" min="0" matInput formControlName="password" required
+                            (click)="resetValidations()">
+                    </mat-form-field>
+                    <div class="error">
+                        <p *ngIf="(adminsForm.get('password')?.errors && adminsForm.get('password')?.touched) || (invalid && adminsForm.get('password')?.untouched)"
+                            [@enterAnimation]>
+                            Mínimo 6 caracteres
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</section>
