@@ -1,0 +1,14 @@
+{
+  "targets" :{
+    "la-plazuela-eae43":{
+      "hosting": {
+        "la-plazuela-eae43":[
+          "piedra-panel"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "la-plazuela-eae43"
+  }
+}
