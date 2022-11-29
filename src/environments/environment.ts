@@ -12,7 +12,8 @@ export const environment = {
     messagingSenderId: '549492199614',
   },
   production: false,
-  URL_API: 'http://localhost:8080/api',
+  //URL_API: 'http://localhost:8080/api',
+  URL_API: 'https://piedra-back.herokuapp.com/api',
 };
 
 /*
