@@ -10,5 +10,6 @@ export const environment = {
   production: true,
 
   //URL_API: 'http://localhost:8080/api',
-  URL_API: 'https://piedra-back.herokuapp.com/api',
+  URL_API: 'https://piedra-mongo-back-production.up.railway.app/api',
+  
 };
