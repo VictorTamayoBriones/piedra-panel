@@ -1,0 +1,35 @@
+{
+  "name": "La Plazuela",
+  "short_name": "Plazuela",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ccc",
+  "lang": "en",
+  "scope": "./assets",
+  "description": "La palzuela restaurant",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/svg"
+    },
+    {
+      "src": "logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo.svg",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.svg",
+      "sizes": "144x144",
+      "type": "image/svg"
+    }
+  ],
+  "prefer_related_applications": false
+}
