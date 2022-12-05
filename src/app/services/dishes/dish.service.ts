@@ -13,6 +13,7 @@ export interface SimpleResponse {
 export class DishService {
 
   private DISHES_URI: string = `${environment.URL_API}/dishes/`;
+  private CONTACTS_URI: string = `${environment.URL_API}/contact/`;
 
   constructor(
     private http: HttpClient
@@ -71,6 +72,16 @@ export class DishService {
   async delete(id: string) {
     try {
       let response = await this.http.post<SimpleResponse>(this.DISHES_URI + 'delete', { id }).toPromise();
+      return response
+    } catch (error) {
+      console.log(error);
+      throw error
+    }
+  }
+
+  async getAllContacts() {
+    try {
+      let response: any = await this.http.get<Response>(this.CONTACTS_URI + 'get-all').toPromise();
       return response
     } catch (error) {
       console.log(error);

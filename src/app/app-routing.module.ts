@@ -8,6 +8,7 @@ import { SignInGuardService } from './services/auth/sign-in-guard.service';
 import { UsersTableComponent } from './pages/users-table/users-table.component';
 import { UsersCreateComponent } from './components/users-create/users-create.component';
 import { DishesFormComponent } from './components/dishes-form/dishes-form.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,7 +27,10 @@ const routes: Routes = [
   //Diches
   { path: 'dishes-form/create/:id', component: DishesFormComponent, canActivate: [AuthGuardService]},
   { path: 'dishes-form/edit/:id', component: DishesFormComponent, canActivate: [AuthGuardService]},
-  { path: 'dishes-form/update/:id', component: DishesFormComponent, canActivate: [AuthGuardService]}
+  { path: 'dishes-form/update/:id', component: DishesFormComponent, canActivate: [AuthGuardService]},
+
+  //Contacts
+  { path: 'contacts', component: ContactsComponent, canActivate: [AuthGuardService]},
 
 ];
 
