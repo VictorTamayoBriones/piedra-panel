@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#ccc",
   "lang": "en",
-  "scope": "/",
+  "scope": "./assets",
   "description": "La palzuela restaurant",
   "theme_color": "#ffffff",
   "icons": [
