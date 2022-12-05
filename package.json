@@ -36,6 +36,7 @@
     "@angular/compiler-cli": "^14.1.0",
     "@types/jest": "latest",
     "jest": "latest",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "workbox-cli": "^6.5.4"
   }
 }
