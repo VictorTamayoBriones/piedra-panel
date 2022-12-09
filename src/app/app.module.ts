@@ -25,8 +25,6 @@ import { UsersCreateComponent } from './components/users-create/users-create.com
 import { AddTagModalComponent } from './components/add-tag-modal/add-tag-modal.component';
 import { DishesFormComponent } from './components/dishes-form/dishes-form.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-
 
 
 @NgModule({
@@ -48,7 +46,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
