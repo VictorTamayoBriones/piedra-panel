@@ -25,6 +25,8 @@ import { UsersCreateComponent } from './components/users-create/users-create.com
 import { AddTagModalComponent } from './components/add-tag-modal/add-tag-modal.component';
 import { DishesFormComponent } from './components/dishes-form/dishes-form.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import { PedidosTableComponent } from './pages/pedidos-table/pedidos-table.component';
+
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
     AddTagModalComponent,
     DishesFormComponent,
     ContactsComponent,
+    PedidosTableComponent,
   ],
   imports: [
     BrowserModule,

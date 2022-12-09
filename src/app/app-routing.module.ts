@@ -9,6 +9,7 @@ import { UsersTableComponent } from './pages/users-table/users-table.component';
 import { UsersCreateComponent } from './components/users-create/users-create.component';
 import { DishesFormComponent } from './components/dishes-form/dishes-form.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import { PedidosTableComponent } from './pages/pedidos-table/pedidos-table.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -31,6 +32,8 @@ const routes: Routes = [
 
   //Contacts
   { path: 'contacts', component: ContactsComponent, canActivate: [AuthGuardService]},
+  
+  { path: 'pedidos', component: PedidosTableComponent, canActivate: [AuthGuardService]},
 
 ];
 

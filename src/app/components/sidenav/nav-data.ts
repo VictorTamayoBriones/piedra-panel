@@ -9,4 +9,9 @@ export const navbarData = [
         icon: "fa-solid fa-envelope-open-text",
         label: 'Mensajes de contacto'
     }, 
+    {
+        routeLink: '/pedidos',
+        icon: "fa-solid fa-receipt",
+        label: 'Pedidos'
+    }, 
 ]
